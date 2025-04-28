@@ -5,6 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>彭渤水纪念堂-mc521.cn</title>
     <style>
+        body {
+            background-color: #000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        .family-tree {
+            margin: 20px auto;
+            max-width: 700px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #333;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+        }
+        .family-tree h3 {
+            text-align: center;
+            color: #ffa500;
+            font-size: 1.8em;
+        }
+        .family-tree ul {
+            list-style: none;
+            padding: 0;
+        }
+        .family-tree li {
+            margin-bottom: 15px;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #444;
+        }
+        .family-tree li:last-child {
+            border-bottom: none;
+        }
+        .name {
+            color: #00ff00;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.1em;
+        }
+        .id-box {
+            display: inline-block;
+            color: #ff0000;
+            background-color: #222;
+            padding: 5px 10px;
+            border: 2px solid #ff0000;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .family-tree img {
+            margin-left: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+        }
+        .family-tree img {
+            margin-left: 10px;
+            width: 20px;
+            height: 20px;
+        }
         .version-switcher {
             position: fixed;
             top: 20px;
@@ -353,12 +413,17 @@
             <p>渤水曾在群内发出和女朋友出去约会的图片,据渤水女朋友透露,渤水真不行。</p>
             <p>每次都要吃一颗 西地那非(伟哥) 才能勃起 怎么说勃水呢 不如改名叫彭勃起 这样说不定更好点</p>
         </div>
-        <div class="category">
-            <h3>渤水全家:</h3>
+        <div class="family-tree">
+            <h3>👨‍👩‍👦 家族图谱</h3>
             <ul>
-                <li>父亲：已报单,待出道。</li>
-                <li>母亲：已报单,待出道。</li>
-                <li>男朋友：正在调查,发现将出道联系。</li>
+                <li>父亲：<span class="name">彭永代</span> <span class="id-box" onclick="copyToClipboard('130984196707040915')">130984********0915</span><img src="pyd.png" alt="父亲"></li>
+                <li>母亲：<span class="name">薛恋英</span> <span class="id-box" onclick="copyToClipboard('130984197109180920')">130984********0920</span><img src="xly.png" alt="母亲"></li>
+                <li>哥哥：<span class="name">彭为高</span> <span class="id-box" onclick="copyToClipboard('130984199305050970')">130984********0970</span><img src="pwg.png" alt="哥哥"></li>
+                <li>妹妹：<span class="name">彭渤天</span> <span class="id-box" onclick="copyToClipboard('130984200709221049')">130984********1049</span><img src="pbt.png" alt="妹妹"></li>
+                <li>女朋友：<span class="name">正在调查, 发现将出道联系。</span><img src="girlfriend.png" alt="女朋友"></li>
+                <p style="font-style: italic; text-align: center; margin-top: 15px; color: #888;">
+                    勃水家人，目前罪不至死，故此隐藏身份证号。
+                </p>
             </ul>
         </div>
         <div class="author-box">
@@ -418,12 +483,17 @@
             <p>每次都要吃一颗 西地那非(伟哥) 才能勃起 怎么说勃水呢 不如改名叫彭勃起 这样说不定更好点</p>
         </div>
 
-        <div class="category">
+        <div class="family-tree">
             <h3>👨‍👩‍👦 家族图谱</h3>
             <ul>
-                <li>👨 父亲：已报单,待出道。</li>
-                <li>👩 母亲：已报单,待出道。</li>
-                <li>👬 男朋友：正在调查,发现将出道联系。</li>
+                <li>父亲：<span class="name">彭永代</span> <span class="id-box" onclick="copyToClipboard('130984196707040915')">130984********0915</span><img src="pyd.png" alt="父亲"></li>
+                <li>母亲：<span class="name">薛恋英</span> <span class="id-box" onclick="copyToClipboard('130984197109180920')">130984********0920</span><img src="xly.png" alt="母亲"></li>
+                <li>哥哥：<span class="name">彭为高</span> <span class="id-box" onclick="copyToClipboard('130984199305050970')">130984********0970</span><img src="pwg.png" alt="哥哥"></li>
+                <li>妹妹：<span class="name">彭渤天</span> <span class="id-box" onclick="copyToClipboard('130984200709221049')">130984********1049</span><img src="pbt.png" alt="妹妹"></li>
+                <li>女朋友：<span class="name">正在调查, 发现将出道联系。</span><img src="girlfriend.png" alt="女朋友"></li>
+                <p style="font-style: italic; text-align: center; margin-top: 15px; color: #888;">
+                    勃水家人，目前罪不至死，故此隐藏身份证号。
+                </p>
             </ul>
         </div>
 
@@ -457,10 +527,11 @@
         tryUnmute()
         document.addEventListener('click', tryUnmute, { once: true })
     })
-</script>
-
-<script>
-
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert("身份证号已复制: " + text);
+        });
+    }
     function toggleVersion() {
         const oldContainer = document.getElementById('old-container');
         const newContainer = document.getElementById('new-container');
