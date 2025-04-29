@@ -5,12 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>彭渤水纪念堂（新版）-mc521.cn</title>
     <style>
+
+
         :root {
             --primary-color: #2a2a2a;
             --accent-color: #6a1b9a;
             --text-color: #e0e0e0;
             --border-color: #4a4a4a;
             --highlight-color: #9c27b0;
+        }
+        .copyright {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-5deg);
+            font-size: 0.9em;
+            font-style: italic;
+            background: linear-gradient(45deg, #ffd700, #ffec80, #fff3b0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 8px rgba(0,0,0,0.3);
+            writing-mode: vertical-lr;
+            letter-spacing: 2px;
+            opacity: 0.8;
+            z-index: 2;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+        }
+
+        .copyright:hover {
+            opacity: 1;
+            text-shadow: 0 0 15px rgba(0,0,0,0.5);
+            transform: translateY(-50%) rotate(0deg);
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
         }
         body {
             font-family: '思源宋体', 'Noto Serif SC', serif;
@@ -190,6 +218,11 @@
             border-radius: 50%;
         }
         @media (max-width: 768px) {
+            .copyright {
+                left: 10px;
+                font-size: 0.7em;
+                writing-mode: vertical-rl;
+            }
             .container {
                 padding: 1.5rem;
                 margin: 1rem;
@@ -201,6 +234,7 @@
     </style>
 </head>
 <body>
+<div class="copyright">勃水葬礼有限公司版权所有 @2025-Future</div>
 <div class="container">
     <div class="header-section">
         <div class="memorial-image">
@@ -265,36 +299,6 @@
     <p style="text-align: center; opacity: 0.8; margin-top: 2rem;">🌹 为民除恶,深藏功与名 🌹</p>
 </div>
 <script>
-    // 散花特效
-    function createPetals() {
-        const petals = ['🌸', '💮', '🏵️', '🌺', '🌼', '🌻'];
-        const container = document.getElementById('petals-container');
-
-        for(let i = 0; i < 30; i++) {
-            const petal = document.createElement('div');
-            petal.className = 'petal';
-            petal.innerHTML = petals[Math.floor(Math.random() * petals.length)];
-
-            // 随机属性
-            const size = Math.random() * 25 + 15;
-            const left = Math.random() * 100;
-            const duration = Math.random() * 5 + 5;
-            const delay = Math.random() * -20;
-
-            petal.style.cssText = `
-                    font-size: ${size}px;
-                    left: ${left}%;
-                    animation-duration: ${duration}s;
-                    animation-delay: ${delay}s;
-                    filter: hue-rotate(${Math.random() * 360}deg);
-                `;
-
-            container.appendChild(petal);
-        }
-    }
-    createPetals();
-
-    // 保留原有脚本功能
     document.addEventListener('DOMContentLoaded', function() {
         const tryUnmute = () => {
             document.querySelectorAll('audio').forEach(audio => {
@@ -305,7 +309,6 @@
         tryUnmute()
         document.addEventListener('click', tryUnmute, { once: true })
     })
-
     function copyToClipboard(text) {
         navigator.clipboard.writeText(text).then(() => {
             alert("身份证号已复制: " + text);

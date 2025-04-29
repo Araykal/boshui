@@ -10,6 +10,32 @@
             color: #ffffff;
             font-family: Arial, sans-serif;
         }
+        .copyright {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-5deg);
+            font-size: 0.9em;
+            font-style: italic;
+            background: linear-gradient(45deg, #ffd700, #ffec80, #fff3b0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 8px rgba(0,0,0,0.3);
+            writing-mode: vertical-lr;
+            letter-spacing: 2px;
+            opacity: 0.8;
+            z-index: 2;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+        }
+
+        .copyright:hover {
+            opacity: 1;
+            text-shadow: 0 0 15px rgba(0,0,0,0.5);
+            transform: translateY(-50%) rotate(0deg);
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+        }
         .family-tree {
             margin: 20px auto;
             max-width: 700px;
@@ -135,9 +161,15 @@
             color: white;
             text-align: center;
         }
+        .copyright {
+            left: 10px;
+            font-size: 0.7em;
+            writing-mode: vertical-rl;
+        }
     </style>
 </head>
 <body>
+<div class="copyright">勃水葬礼有限公司版权所有 @2025-Future</div>
 <div class="container">
     <h1>纪念逝者</h1>
     <img src="pbs.png" alt="纪念图片" class="image">
