@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彭渤水纪念堂（新版）-mc521.cn</title>
+    <style>
+        :root {
+            --primary-color: #2a2a2a;
+            --accent-color: #6a1b9a;
+            --text-color: #e0e0e0;
+            --border-color: #4a4a4a;
+            --highlight-color: #9c27b0;
+        }
+        body {
+            font-family: '思源宋体', 'Noto Serif SC', serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: var(--primary-color);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 48%, var(--highlight-color) 50%, transparent 52%);
+            opacity: 0.05;
+            animation: animate 20s linear infinite;
+        }
+        @keyframes animate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        h1, h2, h3 {
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            margin: 1.5rem 0;
+        }
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 1rem;
+        }
+        .image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 12px;
+            margin: 1.5rem auto;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        .image:hover {
+            transform: scale(1.02);
+        }
+        .lifespan {
+            font-size: 1.2rem;
+            color: var(--highlight-color);
+            margin: 1.5rem 0;
+            padding: 0.8rem;
+            background: rgba(106,27,154,0.1);
+            border-radius: 8px;
+        }
+        .category {
+            background: rgba(40,40,40,0.95);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: transform 0.3s ease;
+        }
+        .category:hover {
+            transform: translateY(-3px);
+        }
+        .category h3 {
+            color: var(--highlight-color);
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .category h3::before {
+            content: '🕯️';
+            font-size: 1.2em;
+        }
+        .speech {
+            background: rgba(30,30,30,0.9);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            position: relative;
+        }
+        .speech::after {
+            content: '“';
+            position: absolute;
+            top: -20px;
+            left: -15px;
+            font-size: 4rem;
+            color: var(--accent-color);
+            opacity: 0.3;
+        }
+        .link {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(45deg, var(--accent-color), #8e24aa);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(106,27,154,0.4);
+        }
+        .link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(106,27,154,0.6);
+        }
+        audio {
+            width: 100%;
+            margin: 1.5rem 0;
+            filter: grayscale(0.8);
+        }
+        audio::-webkit-media-controls-panel {
+            background-color: var(--primary-color);
+        }
+        .author-box {
+            background: rgba(50,50,50,0.9);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+        }
+        .small-image {
+            max-width: 180px;
+            margin: 1rem auto;
+            border-radius: 8px;
+            opacity: 0.9;
+        }
+        .family-tree {
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #333;
+        }
+        .family-tree h3 {
+            color: #ffa500;
+            font-size: 1.8em;
+        }
+        .family-tree ul {
+            list-style: none;
+            padding: 0;
+        }
+        .family-tree li {
+            margin-bottom: 15px;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #444;
+        }
+        .name {
+            color: #00ff00;
+            margin-right: 10px;
+        }
+        .id-box {
+            background-color: #222;
+            padding: 5px 10px;
+            border: 2px solid #ff0000;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .family-tree img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header-section">
+        <div class="memorial-image">
+            <img src="pbs.png" alt="纪念图片">
+        </div>
+        <h1>🕯️ 渤水追思堂 🕯️</h1>
+    </div>
+    <p class="lifespan">⏳ 生于：2001-10-23 - 逝于：2025-04-27 ⏳</p>
+
+    <div class="speech">
+        <h2>📢 彭母致辞</h2>
+        <p>你们好啊，我是彭渤水“它”母亲，很不幸的是渤水无法与你们继续互通。</p>
+        <p>我很悲伤，彭渤水从小到大很可怜，从小就不行，需要吃阻断药维持生机。</p>
+        <p>可是它死了，是我没有想到的，真的很悲伤。</p>
+        <p>家里从小就穷，渤水没见过钱，所以一直圈你们的金币，我很抱歉。</p>
+        <p>在这里我替彭渤水给各位道歉，作为它的母亲，我倍感羞愧。</p>
+        <p>这孩子喜欢出去认爹，我也没有办法。</p>
+        <p>渤水死了我也不想活了,我要下去陪它!!!</p>
+    </div>
+
+    <div class="category">
+        <h3>📖 渤水往事</h3>
+        <p>曾开创mc521.cn服务器,圈元子,贩卖OP,神权,辱骂玩家,恶俗玩家,人品属实不行</p>
+        <p>彭渤水这个人呢,喜欢诈骗,据有关人事透露,曾诈骗玩家3600元子</p>
+        <p>人品属实不太行,这种不生来罪恶,浪费地球空气,感谢各位志愿者贡献让我们清理地球垃圾</p>
+        <p>喜欢你Zines大爹吗？</p>
+        <img src="pbssm.png" class="small-image" alt="圈钱狗">
+    </div>
+
+    <div class="category">
+        <h3>❤️ 渤水爱好</h3>
+        <p>渤水曾在群内发出和女朋友出去约会的图片,据渤水女朋友透露,渤水真不行。</p>
+        <p>每次都要吃一颗 西地那非(伟哥) 才能勃起 怎么说勃水呢 不如改名叫彭勃起 这样说不定更好点</p>
+    </div>
+
+    <div class="family-tree">
+        <h3>👨‍👩‍👦 家族图谱</h3>
+        <ul>
+            <li>父亲：<span class="name">彭永代</span> <span class="id-box" onclick="copyToClipboard('130984********0915')">130984********0915</span><img src="pyd.png" alt="父亲"></li>
+            <li>母亲：<span class="name">薛恋英</span> <span class="id-box" onclick="copyToClipboard('130984********0920')">130984********0920</span><img src="xly.png" alt="母亲"></li>
+            <li>哥哥：<span class="name">彭为高</span> <span class="id-box" onclick="copyToClipboard('130984********0970')">130984********0970</span><img src="pwg.png" alt="哥哥"></li>
+            <li>妹妹：<span class="name">彭渤天</span> <span class="id-box" onclick="copyToClipboard('130984********1049')">130984********1049</span><img src="pbt.png" alt="妹妹"></li>
+            <li>女朋友：<span class="name">正在调查, 发现将出道联系。</span><img src="girlfriend.png" alt="女朋友"></li>
+            <p style="font-style: italic; text-align: center; margin-top: 15px; color: #888;">
+                勃水家人，目前罪不至死，故此隐藏身份证号。
+            </p>
+        </ul>
+    </div>
+
+    <div class="author-box">
+        <h3>✍️ 编者寄语</h3>
+        <p>如果您有更多相关信息，欢迎投稿至：</p>
+        <p>📧 <a href="mailto:miao@meowtery.cn" style="color: #9c27b0;">miao@meowtery.cn</a></p>
+        <p>🌐 更多详情请访问我们的纪念网站：</p>
+        <a href="https://nmsl.website/%E5%BD%AD%E6%B8%A4%E6%B0%B4" class="link">🕯️ 进入追思馆</a>
+        <p style="color: #ff80ab; margin-top: 1rem;">※ 建议使用VPN访问完整内容</p>
+    </div>
+    <audio controls autoplay>
+        <source src="sbpbs.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放
+    </audio>
+    <p style="text-align: center; opacity: 0.8; margin-top: 2rem;">🌹 为民除恶,深藏功与名 🌹</p>
+</div>
+<script>
+    // 散花特效
+    function createPetals() {
+        const petals = ['🌸', '💮', '🏵️', '🌺', '🌼', '🌻'];
+        const container = document.getElementById('petals-container');
+
+        for(let i = 0; i < 30; i++) {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.innerHTML = petals[Math.floor(Math.random() * petals.length)];
+
+            // 随机属性
+            const size = Math.random() * 25 + 15;
+            const left = Math.random() * 100;
+            const duration = Math.random() * 5 + 5;
+            const delay = Math.random() * -20;
+
+            petal.style.cssText = `
+                    font-size: ${size}px;
+                    left: ${left}%;
+                    animation-duration: ${duration}s;
+                    animation-delay: ${delay}s;
+                    filter: hue-rotate(${Math.random() * 360}deg);
+                `;
+
+            container.appendChild(petal);
+        }
+    }
+    createPetals();
+
+    // 保留原有脚本功能
+    document.addEventListener('DOMContentLoaded', function() {
+        const tryUnmute = () => {
+            document.querySelectorAll('audio').forEach(audio => {
+                audio.muted = false
+                audio.play().catch(() => {})
+            })
+        }
+        tryUnmute()
+        document.addEventListener('click', tryUnmute, { once: true })
+    })
+
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert("身份证号已复制: " + text);
+        });
+    }
+</script>
+</body>
+</html>
